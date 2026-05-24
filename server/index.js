@@ -7,11 +7,13 @@ const PORT = process.env.PORT || 5000;
 
 // ── Middleware ──────────────────────────────────────
 app.use(cors({
-  origin: 'http://localhost:3000',   // React dev server
+  origin: [
+    'http://localhost:3000',
+    'https://netflix-clone-brown-iota-39.vercel.app'
+  ],
   methods: ['POST', 'GET'],
   credentials: true,
 }));
-
 app.use(express.json());             // parse JSON request bodies
 
 // ── Routes ──────────────────────────────────────────
