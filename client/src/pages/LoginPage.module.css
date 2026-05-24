@@ -1,0 +1,252 @@
+/* ── Page shell ───────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Background ───────────────────────────────────── */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: #000;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.5) 0%,
+      rgba(0,0,0,0.1) 30%,
+      rgba(0,0,0,0.1) 70%,
+      rgba(0,0,0,0.7) 100%
+    ),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/5e16108e-9138-4ddc-b5d4-9b5d5743a87d/web/IN-en-20250428-TRIFECTA-perspective_f24b7d9d-3af4-4c68-ba96-ce9ae8c1c84e_large.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Header ───────────────────────────────────────── */
+.header {
+  position: relative;
+  z-index: 10;
+  padding: 24px 56px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .header { padding: 16px 24px; }
+}
+
+/* ── Main (centers the card) ──────────────────────── */
+.main {
+  flex: 1;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px 60px;
+}
+
+/* ── Login card ───────────────────────────────────── */
+.card {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 60px 68px 40px;
+  width: 100%;
+  max-width: 450px;
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 40px 24px 28px;
+    background: transparent;
+  }
+}
+
+/* ── Title ────────────────────────────────────────── */
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--netflix-text);
+  margin-bottom: 28px;
+}
+
+/* ── Server error banner ──────────────────────────── */
+.serverError {
+  background: #e87c03;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* ── Form ─────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Submit button ────────────────────────────────── */
+.submitBtn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background: var(--netflix-red);
+  color: var(--netflix-text);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--netflix-red-dark);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading spinner */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Extras row ───────────────────────────────────── */
+.extras {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--netflix-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  accent-color: var(--netflix-muted);
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.helpLink {
+  font-size: 13px;
+  color: var(--netflix-muted);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.helpLink:hover {
+  text-decoration: underline;
+  color: var(--netflix-text);
+}
+
+/* ── Sign up prompt ───────────────────────────────── */
+.signupText {
+  margin-top: 36px;
+  font-size: 16px;
+  color: var(--netflix-muted);
+}
+
+.signupLink {
+  color: var(--netflix-text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: text-decoration 0.15s;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+/* ── reCAPTCHA note ───────────────────────────────── */
+.captcha {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #8c8c8c;
+  line-height: 1.6;
+}
+
+.learnMore {
+  color: #0071eb;
+  cursor: pointer;
+}
+
+.learnMore:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ───────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 32px 56px;
+  margin-top: auto;
+}
+
+.footerInner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.footerPhone {
+  font-size: 14px;
+  color: var(--netflix-muted);
+  margin-bottom: 16px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+
+.footerLink {
+  font-size: 12px;
+  color: var(--netflix-muted);
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer { padding: 24px 24px; }
+}

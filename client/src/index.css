@@ -1,0 +1,48 @@
+/* Netflix global tokens */
+:root {
+  --netflix-red:      #E50914;
+  --netflix-red-dark: #b20710;
+  --netflix-black:    #000000;
+  --netflix-dark:     #141414;
+  --netflix-card:     #000000cc;
+  --netflix-surface:  #333333;
+  --netflix-border:   #454545;
+  --netflix-text:     #ffffff;
+  --netflix-muted:    #b3b3b3;
+  --netflix-error:    #e87c03;
+  --font-main:        'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--netflix-dark);
+  color: var(--netflix-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #333333 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+}
+
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,82 @@
+.wrapper {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.toggle {
+  background: none;
+  border: 1px dashed #454545;
+  border-radius: 4px;
+  color: var(--netflix-muted);
+  font-size: 12px;
+  padding: 7px 12px;
+  width: 100%;
+  text-align: left;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.toggle:hover {
+  border-color: var(--netflix-muted);
+  color: var(--netflix-text);
+}
+
+.panel {
+  margin-top: 8px;
+  background: #1f1f1f;
+  border: 1px solid #454545;
+  border-radius: 4px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.creds {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.credItem {
+  font-size: 12px;
+  color: var(--netflix-text);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.credLabel {
+  font-size: 10px;
+  color: var(--netflix-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fill {
+  background: var(--netflix-red);
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.fill:hover {
+  background: var(--netflix-red-dark);
+}
